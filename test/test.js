@@ -47,6 +47,14 @@ describe("f2cm", function() {
 		assert.equal(ft2cm("6’1”"), 185.42);  
 	});
 
+
+	it("inches - quite as inch mark", function() {
+		assert.equal(ft2cm('1"'), 2.54); 
+	});
+	it("feet and inches - quite as inch mark", function() {
+		assert.equal(ft2cm('6’1"'), 185.42);  
+	});
+
 	
 	
 });
