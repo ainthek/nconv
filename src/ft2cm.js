@@ -1,8 +1,8 @@
-function ft2cm(ftString, fixed) {
-	return ftString.replace(/.*(?:(\d+)')?(?:(\d+)'')?.*/, function(m, f, i) {
-		console.log(f, i);
+function ft2cm(ftString, fixed, units) {
+	return ftString.replace(/(?:(\d+)'(\d+)'')|(?:(\d+)'')|(?:(\d+)')/g, function(m, f, i, ii, ff) {
+		//console.log(arguments);
 		// rounding or toFixed or both ?
-		return ((f || 0) / 0.032808 + (i || 0) / 0.39370).toFixed(fixed != null ? fixed : 2);
+		return ((f || ff || 0) / 0.032808 + (i || ii || 0) / 0.39370).toFixed(fixed != null ? fixed : 2) + (units || "");
 	});
 };
 module.exports = ft2cm;
