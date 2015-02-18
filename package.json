@@ -1,7 +1,7 @@
 {
-  "name": "node-boilerplate",
+  "name": "nconv",
   "version": "0.0.0",
-  "description": "",
+  "description": "varions conversions (feet,cms etc..)",
   "main": "src/index.js",
   "scripts": {
     "nsp": "npm shrinkwrap --dev; nsp audit-shrinkwrap",
