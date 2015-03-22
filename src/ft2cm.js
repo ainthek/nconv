@@ -12,4 +12,6 @@ function ft2cm(ftString, format) {
         });
     });
 }
+ft2cm.APPEND_TRANSLATED="%(ft)s (%(cm).2f cm)";
+ft2cm.APPEND_ORIGINAL="%(cm).2f cm (%(ft)s)";
 module.exports = ft2cm;
