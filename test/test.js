@@ -20,7 +20,7 @@ describe("f2cm", function() {
 
 	it("detect and append in string", function() {
 		// TODO: fix the api of the function
-		assert.equal(ft2cm("I'm 5'2'' high",2," cm", true), "I'm 5'2'' (157.48 cm) high"); 
+		assert.equal(ft2cm("I'm 5'2'' high","%(ft)s (%(cm).2f cm)"), "I'm 5'2'' (157.48 cm) high"); 
 	});
 
 	it("fwo times", function() {
@@ -31,14 +31,14 @@ describe("f2cm", function() {
 	});
 
 	it("toFixed", function() {
-		assert.equal(ft2cm("6'",0), "183"); 
+		assert.equal(ft2cm("6'","%(cm).0f"), "183"); 
 	});
 
 	it("add units", function() {
-		assert.equal(ft2cm("6'",0,"cm"), "183cm"); 
+		assert.equal(ft2cm("6'","%(cm).0fcm"), "183cm"); 
 	});
 	it("add units", function() {
-		assert.equal(ft2cm("6'",2," cm"), "182.88 cm"); 
+		assert.equal(ft2cm("6'","%(cm).2f cm"), "182.88 cm"); 
 	});
 	//.......
 	it("feet - Foot and inch marks", function() {
@@ -60,6 +60,16 @@ describe("f2cm", function() {
 		assert.equal(ft2cm('6’1"'), 185.42);  
 	});
 
-	
+	it("1.0 API allows for original and append translated ", function() {
+		// draft of new API, use some reasonable template string format (printf ?)
+		// of course string will look different, this is just idea ;-)
+		assert.equal(ft2cm("I'm 5'2'' high","%(ft)s (%(cm).2f cm)"), "I'm 5'2'' (157.48 cm) high"); 
+	});
+
+	it("1.0 API allows for translated and append original", function() {
+		// draft of new API 
+		assert.equal(ft2cm("I'm 5'2'' high","%(cm).2f cm (which in US was %(ft)s)"), "I'm 157.48 cm (which in US was 5'2'') high"); 
+	});
+
 	
 });
