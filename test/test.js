@@ -81,8 +81,16 @@ describe("f2cm", function() {
         // draft of new API 
         assert.equal(ft2cm("I'm 5'2'' high", ft2cm.APPEND_ORIGINAL), "I'm 157.48 cm (5'2'') high");
     });
+
 	it("1.0 API multiple times", function() {
         assert.equal(ft2cm("6'1'' and 6'1''",ft2cm.APPEND_TRANSLATED), "6'1'' (185.42 cm) and 6'1'' (185.42 cm)");
+    });
+
+	it("Meters are also supported as output, use %(m)", function() {
+        assert.equal(ft2cm('6’1"',"%(m).1f"), 1.9);
+    });
+    it("Millimeters are also supported as output, use %(mm)", function() {
+        assert.equal(ft2cm('6’1"',"%(mm).0f mm"), "1854 mm");
     });
 
 });
