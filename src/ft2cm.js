@@ -5,5 +5,5 @@ function ft2cm(ftString, fixed, units) {
 		// rounding or toFixed or both ?
 		return ((f || ff || 0) / 0.032808 + (i || ii || 0) / 0.39370).toFixed(fixed != null ? fixed : 2) + (units || "");
 	});
-};
+}
 module.exports = ft2cm;
