@@ -18,6 +18,11 @@ describe("f2cm", function() {
 		assert.equal(ft2cm("I'm 5'2'' high"), "I'm 157.48 high"); 
 	});
 
+	it("detect and append in string", function() {
+		// TODO: fix the api of the function
+		assert.equal(ft2cm("I'm 5'2'' high",2," cm", true), "I'm 5'2'' (157.48 cm) high"); 
+	});
+
 	it("fwo times", function() {
 		assert.equal(ft2cm("6'1'' and 6'1''"), "185.42 and 185.42"); 
 	});
