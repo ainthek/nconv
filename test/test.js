@@ -2,6 +2,7 @@ var ft2cm = require("../src/ft2cm.js");
 var assert = require("./assert.js"); //extended node/assert library
 
 describe("f2cm", function() {
+    
     it("feet and inches", function() {
         assert.equal(ft2cm("6'1''"), 185.42);
     });
@@ -92,5 +93,18 @@ describe("f2cm", function() {
     it("Millimeters are also supported as output, use %(mm)", function() {
         assert.equal(ft2cm('6’1"',"%(mm).0f mm"), "1854 mm");
     });
+
+    it("Decimal inches", function() {
+        assert.equal(ft2cm('1.1"'), "2.79");
+    });
+    it("Decimal ft", function() {
+        assert.equal(ft2cm("1.1'"), "33.53");
+    });
+
+    it.skip("Fractional inches", function() {
+        // TODO: implement this feature
+        assert.equal(ft2cm('1 3/4"'), "4.45");
+    });
+    
 
 });

@@ -1,5 +1,7 @@
 var printf = require("printf");
-var re = /(?:(\d+)['’](\d+)(?:''|[”"]))|(?:(\d+)(?:''|[”"]))|(?:(\d+)['’])/g;
+// TODO: fractional inches (?:(\d+) (\d+\/\d+)(?:''|[”"])) 
+// will require more refactor
+var re = /(?:(\d+\.?\d*)['’](\d+\.?\d*)(?:''|[”"]))|(?:(\d+\.?\d*)(?:''|[”"]))|(?:(\d+\.?\d*)['’])/g;
 
 function ft2cm(ftString, format) {
 
