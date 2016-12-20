@@ -12,6 +12,9 @@ describe("f2cm", function() {
     it("inches", function() {
         assert.equal(ft2cm("1''"), 2.54);
     });
+     it("inches (whitespaces not supported)", function() {
+        assert.equal(ft2cm("1 ''"), "1 ''");
+    });
     //....
     //....
 
@@ -105,6 +108,8 @@ describe("f2cm", function() {
         // TODO: implement this feature
         assert.equal(ft2cm('1 3/4"'), "4.45");
     });
+
+
     
 
 });
