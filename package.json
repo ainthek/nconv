@@ -30,6 +30,6 @@
     "bluebird": "^2.7.1",
     "commander": "^2.6.0",
     "printf": "^0.2.1",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.8.5"
   }
 }
